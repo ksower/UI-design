@@ -9,12 +9,14 @@
 }
 .login-form{ display:none; }
 
+
 /* 아시아나 항공 로고 */
 img{
     width: 430px;
     height: 120px;
     object-fit: cover;
 }
+
 
 /* 로그인, 회원가입 버튼 */
 .sign{
@@ -36,21 +38,22 @@ img{
             transition: all 0.30s ease-in-out;
 }
 .sign div:nth-child(1) a {
-    background: #d83d3d;
+    background: #141414;
     border: 2px solid #fff;
 }
 .sign div:nth-child(1) a:hover {
     background: #fff;
-    color: #d83d3d;
+    color: #141414;
 }
 .sign div:nth-child(2) a {
-    background: #9e2c2c;
-    border: 2px solid #9e2c2c;
+    background: #4c4c4c;
+    border: 2px solid #4c4c4c;
 }
 .sign div:nth-child(2) a:hover {
-    background: #b13131;
-    border: 2px solid #b13131;
+    background: #2f2f2f;
+    border: 2px solid #2f2f2f;
 }
+
 
 /* 비행기 */
 .airplane{
@@ -76,15 +79,11 @@ div.action svg{
 }
 
 
-
-
-
-
-/* 로그인 디자인 */
+/* 로그인 디자인(애니메이션 포함) */
 .login-form.action{
     display: flex;
 }
-.login-form #id, .login-form #passwd{
+.login-form > #id, .login-form > #passwd{
     width: 40px;
     height: 40px;
     margin-top: 15px;
@@ -92,32 +91,33 @@ div.action svg{
     border: 2px solid white;
     border-radius: 100px;
     font-size: 17px;
-    background: #d83d3d;
+    background: #141414;
     outline: none;
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transition: 0.5s;
             transition: 0.5s;
 }
-.login-form #id::placeholder, .login-form #passwd::placeholder{ color:#d83d3d; }
-.login-form #id{
+.login-form > #id::placeholder, .login-form > #passwd::placeholder{ color:#141414; }
+.login-form > #id{
             animation: fadeIn 0.5s 1.18s forwards;
     -webkit-animation: fadeIn 0.5s 1.18s forwards;
 }
-.login-form #passwd{
+.login-form > #passwd{
             animation: fadeIn 0.5s 0.95s forwards;
     -webkit-animation: fadeIn 0.5s 0.95s forwards;
 }
-.login-form #submit{
+.login-form > #submit{
     width: 48px;
     height: 48px;
     margin-top: 25px;
     padding: 2px 2px;
     text-decoration: none;
+    font-size: 16px;
     border-radius: 25px;
     line-height: 40px;
-    color: #d83d3d;
-    background: #d83d3d;
+    color: #141414;
+    background: #141414;
     border: 2px solid #fff;
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -140,10 +140,30 @@ div.action svg{
     }
 }
 
-.login-form.wide #id, .login-form.wide #passwd{ width:300px; padding:2px 25px; background:white; }
-.login-form.wide #id::placeholder, .login-form.wide #passwd::placeholder{ color:#d83d3d; font-size:14px; }
-.login-form.wide #submit{ width:100px; padding:2px 25px; color:white; }
-.login-form.wide #submit:hover {
+.login-form.wide > #id, .login-form.wide > #passwd{ width:300px; padding:2px 25px; background:white; }
+.login-form.wide > #id::placeholder, .login-form.wide > #passwd::placeholder{ color:#d83d3d; font-size:14px; }
+.login-form.wide > #submit{ width:100px; padding:2px 25px; color:white; }
+.login-form.wide > #submit:hover {
     background: #fff;
-    color: #d83d3d;
+    color: #141414;
+}
+
+
+/* 회원가입 디자인 */
+.signup-form{
+    width: 460px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -280px;
+    margin-left: -230px;
+    border-radius: 30px;
+    border: 10px solid gray;
+    background: white;
+    opacity: 0;
+    animation: signupFadeIn 0.5s 0.5s forwards;
+}
+@keyframes signupFadeIn{
+    100%{ margin-top:-250px; opacity:1; }
 }
