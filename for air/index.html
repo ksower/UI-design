@@ -27,18 +27,22 @@
         <!-- Sign nav btns -->
         <div class="sign">
             <div><a class="signin" href="#" onclick="toggleLogin();">Sign in</a></div>
-            <div><a class="signup" href="#">Sign up</a></div>
+            <div><a class="signup" href="#" onclick="toggleSignUp();">Sign up</a></div>
         </div>
 
         <!-- 회원가입 양식 -->
         <div class="signup-form">
-            <span>Sign up</span>
-            <span>Name</span>
-            <input type="text" name="userName" placeholder="Name">
-            <input type="text" name="userId" placeholder="ID">
-            <input type="text" name="userPw" placeholder="Password">
-            <input type="text" name="userEmail" placeholder="Email">
-            <input type="button" value="Complete">
+            <div id="top">
+                <span>Welcome!</span>
+                <div id="close" onclick="toggleSignUp();"><span></span><span></span></div>
+            </div>
+            <div id="bottom">
+                <input type="text" name="userName" placeholder="Name">
+                <input type="text" name="userId" placeholder="ID">
+                <input type="text" name="userPw" placeholder="Password">
+                <input type="text" name="userEmail" placeholder="Email">
+                <input id="suSubmit" type="button" value="Complete">
+            </div>
         </div>
 
         <!-- 비행기(애니메이션) -->
@@ -58,8 +62,11 @@
     <div class="login-form">
         <input id="id" type="text" name="userId" placeholder="ID">
         <input id="passwd" type="password" name="userPw" placeholder="Password">
-        <input id="submit" type="button" value="login"/>
+        <input id="submit" type="button" value="login" onclick="goToMainPage();"/>
     </div>
+
+    <!-- 화면전환 용 흰 화면 -->
+    <div class="transfer"></div>
 </body>
 
 </html>

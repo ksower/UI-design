@@ -7,7 +7,8 @@
     justify-content: center;
     align-items: center;
 }
-.login-form{ display:none; }
+.login-form{display:none;}
+.signup-form{display:none;}
 
 
 /* 아시아나 항공 로고 */
@@ -61,28 +62,19 @@ img{
 }
 
 /* 로그인 시 애니메이션 */
-div.action img, div.action .sign{
+.wrapper.action > img, .wrapper.action > .sign{
     opacity: 0;
     transition: 0.5s;
 }
-div.action svg{
-            animation: upPlane 1.3s 0.6s forwards;
-    -webkit-animation: upPlane 1.3s 0.6s forwards;
-}
-@keyframes upPlane{
-    0%{margin-top: 0;}
-    100%{margin-top: -450px;}
-}
-@-webkit-keyframes upPlane{
-    0%{margin-top: 0;}
-    100%{margin-top: -450px;}
+.airplane.action{
+    transition: 1.3s;
+    transition-delay: 0.6s;
+    margin-top: -450px;
 }
 
 
 /* 로그인 디자인(애니메이션 포함) */
-.login-form.action{
-    display: flex;
-}
+.login-form.action{display: flex;}
 .login-form > #id, .login-form > #passwd{
     width: 40px;
     height: 40px;
@@ -150,20 +142,137 @@ div.action svg{
 
 
 /* 회원가입 디자인 */
+.signup-form.action{display:block;}
 .signup-form{
-    width: 460px;
+    width: 420px;
     height: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -280px;
-    margin-left: -230px;
-    border-radius: 30px;
-    border: 10px solid gray;
-    background: white;
+    margin-top: -270px;
+    margin-left: -210px;
     opacity: 0;
-    animation: signupFadeIn 0.5s 0.5s forwards;
+            animation: signupFadeIn 0.3s forwards;
+    -webkit-animation: signupFadeIn 0.3s forwards;
 }
 @keyframes signupFadeIn{
     100%{ margin-top:-250px; opacity:1; }
+}
+@-webkit-keyframes signupFadeIn{
+    100%{ margin-top:-250px; opacity:1; }
+}
+/* 회원가입 상단 부분 */
+.signup-form > #top{
+    width: 100%;
+    height: 20%;
+    border-radius: 15px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3.5;
+    background: #d28888;
+}
+.signup-form > #top::before, .signup-form > #top::after{
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    background: #141414;
+}
+.signup-form > #top::before{left:-15px; top:calc(20% - 15px);}
+.signup-form > #top::after{right:-15px; top:calc(20% - 15px);}
+.signup-form > #top > #close{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5%;
+    top: calc(10% - 23px);
+    cursor: pointer;
+}
+.signup-form > #top > #close > span{
+    content: '';
+    width: 40px;
+    height: 6px;
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    border-radius: 10px;
+    background: black;
+}
+.signup-form > #top > #close > span:nth-child(1){transform:rotate(45deg);}
+.signup-form > #top > #close > span:nth-child(2){transform:rotate(-45deg);}
+.signup-form > #top > #close:hover > span{background: white;}
+/* 회원가입 하단 부분 */
+.signup-form > #bottom{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border-top: 5px dashed rgb(184, 184, 184);
+    background: white;
+}
+.signup-form > #bottom > input:nth-child(-n+4){
+    width: 70%;
+    height: 40px;
+    margin: 10px 0px;
+    border: none;
+    border-bottom: 3px solid gray;
+    font-size: 17px;
+}
+.signup-form > #bottom > input:nth-child(5){
+    width: 120px;
+    height: 60px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 5px solid #d28888;
+    font-size: 15px;
+    color: #d28888;
+    background: white;
+    transition: 0.5s;
+}
+.signup-form > #bottom > input:nth-child(5):hover{
+    width: 60px;
+    border-radius: 50%;
+    border: 5px solid #d83d3d;
+    color: white;
+    background: #d83d3d;
+}
+
+
+/* 화면전환용 흰 화면 */
+.transfer.movepage{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -50%;
+    left: 0;
+    border-radius: 50%;
+    background: white;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-animation: doTransfer 1s 0.7s forwards;
+            animation: doTransfer 1s 0.7s forwards;
+}
+@keyframes doTransfer{
+    100%{
+        -webkit-transform: scale(3);
+                transform: scale(3);
+    }
+}
+@-webkit-keyframes doTransfer{
+    100%{
+        -webkit-transform: scale(3);
+                transform: scale(3);
+    }
+}
+/* 화면전환 시 비행기 */
+.airplane.movepage{
+    transition: 1s;
+    transition-delay: 0s;
+    margin-top: -1000px;
 }
