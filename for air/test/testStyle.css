@@ -1,0 +1,67 @@
+
+.wrapper-detail{
+    width: 500px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -250px;
+    border-radius: 30px;
+    background: yellow;
+    z-index: 100;
+}
+.wrapper-detail > .back{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    
+}
+.wrapper-detail > img{
+    width: 300px;
+    height: 100%;
+    contain: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+
+
+/* 상품 목록 wrapper */
+.wrapper-list{
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    display: flex;
+    flex-flow: wrap;
+}
+
+/* 상품 component design */
+.product{
+    width: 180px;
+    height: 250px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px gray;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.product > img{
+    width: 100%;
+    height: 180px;
+    contain: cover;
+    border-radius: 20px 20px 0 0;
+}
+.product > .bottom{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+}
+.product > .bottom > #name{margin-top:5px; margin-left:15px; font-size: 18px; font-weight:bold;}
+.product > .bottom > #price{margin-left:15px; font-size:17px; color: rgb(224, 101, 101);}
+
+
+.product:hover{
+    transform: scale(1.05);
+}
