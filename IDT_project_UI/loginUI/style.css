@@ -1,0 +1,192 @@
+.wrapper{
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* form 변경 toggle 영역 */
+.form-toggle{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* sign in text */
+.form-toggle > .form1{
+    font-size: 19px;
+    color: #ff0080;
+    text-shadow: 0 0 5px #fff, 0 0 7px #fff, 0 0 8px #ff0080, 0 0 10px #ff0080, 0 0 12px #ff0080, 0 0 15px #ff0080;
+    transition: 0.5s;
+}
+.form-toggle > .form1.active{
+    font-size: 19px;
+    color: rgb(211, 211, 211);
+    text-shadow: none;
+}
+/* sign up text */
+.form-toggle > .form2{
+    font-size: 19px;
+    color: rgb(211, 211, 211);
+    text-shadow: 0;
+    transition: 0.5s;
+}
+.form-toggle > .form2.active{
+    font-size: 19px;
+    color: #ff0080;
+    text-shadow: 0 0 5px #fff, 0 0 7px #fff, 0 0 8px #ff0080, 0 0 10px #ff0080, 0 0 12px #ff0080, 0 0 15px #ff0080;
+}
+/* toggle button */
+.form-toggle > div{
+    width: 100px;
+    height: 40px;
+    margin: 0 15px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px #d1d9e6 inset, -5px -5px 5px white inset;
+    cursor: pointer;
+}
+.form-toggle > div > .toggle-btn{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 30px;
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 2px 2px 2px rgb(211, 211, 211);
+    background: white;
+    transition: 0.5s;
+}
+.form-toggle > div > .toggle-btn.active{
+    margin-left: 63px;
+}
+
+
+/* 로그인 영역 디자인 */
+.login-wrapper{
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    opacity: 0;
+    animation: upperDiv 0.8s 0.2s forwards;
+    display: block;
+    transition: 0.3s;
+    transition-delay: 0.4s;
+}
+.login-wrapper.active{
+    display: none;
+    transition-delay: 0s;
+}
+@keyframes upperDiv{
+    100%{opacity:1; box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px white;}
+}
+/* sign in form 상단 */
+.login-wrapper > div{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-wrapper > div > span:nth-child(1){font-size:25px; font-weight:bold;}
+.login-wrapper > div > span:nth-child(2){margin-top:8px; font-size:17px;}
+/* sign in form 하단 */
+.login-wrapper > form{
+    width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-rows: 80px 80px 100px;
+    justify-content: center;
+    align-items: center;
+}
+.login-wrapper > form > #in{
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 17px;
+    background: inherit;
+}
+.login-wrapper > form > #submit{
+    width: 85px;
+    height: 40px;
+    margin-left: 230px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px white;
+    background: inherit;
+    outline: none;
+    cursor: pointer;
+}
+.login-wrapper > form > #submit:active{
+    box-shadow: 10px 10px 10px white inset, -10px -10px 10px #d1d9e6 inset;
+}
+
+
+/* 회원가입 영역 디자인 */
+.signup-wrapper{
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    animation: upperDiv 0.8s 0.2s forwards;
+    opacity: 0;
+    display: none;
+    transition: 0.3s;
+    transition-delay: 0s;
+}
+.signup-wrapper.active{
+    display: block;
+    transition-delay: 0.4s;
+}
+/* sign up form 상단 */
+.signup-wrapper > div{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signup-wrapper > div > span:nth-child(1){font-size:25px; font-weight:bold;}
+.signup-wrapper > div > span:nth-child(2){margin-top:8px; font-size:17px;}
+/* sign up form 하단 */
+.signup-wrapper > form{
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-template-rows: 50px 50px 50px 50px 80px;
+    justify-content: center;
+    align-items: center;
+}
+.signup-wrapper > form > #in{
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 17px;
+    background: inherit;
+}
+.signup-wrapper > form > #submit{
+    width: 85px;
+    height: 40px;
+    margin-left: 230px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px white;
+    background: inherit;
+    outline: none;
+    cursor: pointer;
+}
+.signup-wrapper > form > #submit:active{
+    box-shadow: 10px 10px 10px white inset, -10px -10px 10px #d1d9e6 inset;
+}

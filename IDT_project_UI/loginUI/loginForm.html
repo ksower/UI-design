@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./script.js"></script>
+
+    <title>HTML Intro</title>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: #EDF2F0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="form-toggle">
+            <span class="form1">Sign in</span>
+            <div onclick="formToggle();"><div class="toggle-btn"></div></div>
+            <span class="form2">Sign up</span>
+        </div>
+
+        <div class="login-wrapper">
+            <div>
+                <span>Sign in</span>
+                <span>welcome text.</span>
+            </div>
+
+            <form action="" method="post">
+                <input id="in" type="text" name="userID" placeholder="ID">
+                <input id="in" type="password" name="userPW" placeholder="Password">
+                <input id="submit" type="submit" value="Login">
+            </form>
+        </div>
+
+        <div class="signup-wrapper">
+            <div>
+                <span>Sign up</span>
+                <span>welcome text.</span>
+            </div>
+            
+            <form action="" method="post">
+                <input id="in" type="text" name="userName" placeholder="Name">
+                <input id="in" type="text" name="userEmail" placeholder="Email">
+                <input id="in" type="text" name="userID" placeholder="ID">
+                <input id="in" type="password" name="userPW" placeholder="Password">
+                <input id="submit" type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
